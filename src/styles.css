@@ -2,6 +2,7 @@
 
 body {
 	padding-top: 30px;
+	padding-bottom: 30px;
 	background: radial-gradient(#09203f 0%, #537895 100%);
 	font-family: 'Raleway', sans-serif;
 }
@@ -39,6 +40,29 @@ hr {
 	color: white;
 	width: 566px;
 	margin: 0 auto;
+}
+
+.app {
+	max-width: 800 px;
+	margin: 60 px auto;
+	box-sizing: border-box;
+}
+.container {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	padding: 40px;
+}
+.weather {
+	border-radius: 22px;
+	box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+	color: white;
+	border-color: aliceblue;
+	border: 3px solid white;
+	display: block;
+	margin: 0 auto;
+	padding: 30px;
 }
 
 .center-icon {
