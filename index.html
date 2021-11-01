@@ -29,9 +29,10 @@
 		<div class="app">
 			<div class="container">
 				<div class="weather">
+
 		<form id="search-form">
 			<div class="d-flex row-search-bar">
-				<div class="col-6-city">
+				<div class="col-9">
 					<input
 						type="text"
 						placeholder="Type a city..."
@@ -50,23 +51,57 @@
 				</div>
 			</div>
 		</form>
-		<div class="container-fluid"style="text-transform:uppercase">
-			<h1>OKLAHOMA CITY</h1>
-			<h3>Tuesday 17:22</h3>
-			<div class="current-temp">
-				<span class="current-temp"id="current-temperature">84°</span>
+
+		<div class="row">
+
+			<div class="col-6"style="text-transform:uppercase">
+				<div class="city-day container">
+					<h1>OKLAHOMA CITY</h1>
+					<ul>
+						<li>
+					<h3>Tuesday 17:22</h3>
+					</li>
+					<li>
+						<span style="text-transform: uppercase" style="font-size: 25px" id="condition">PARTLY CLOUDY</span>
+					</li>
+						<li>
+						<span id="humidity">HUMIDITY: 57%</span>
+					</li>
+					<li>
+						<span id="humidity">WIND: 0.45 km/h</span>
+					</li>
+					</ul>
+				
+					</div>
+					</div>
+					
+					<div class="col">
+						<div class="icon" style="text-align: right">
+<i class="fas fa-cloud-sun center-icon" id=center-icon></i>
+						</div>
+					</div>
+			
+				<div class="col"style="text-transform:uppercase">
+					<div class="temp-wind-humidity container" style="text-align: right">
+						<ul>
+							<li>
+					<span class="current-temp"id="current-temperature"></i>84°</span>
+					</li>
+					<li>
+						<span class ="today-low"id="low">62° // </span>
+	
+						<span class="today-high"id="high">82°</span>
+					</li>
+					</ul>
+					</div>
+				</div>
+
+	
+
 			</div>
-			<div class="today-high-low">
-				<p class ="today-low"id="low">62° LOW</p>
-				<p class="today-high"id="high">82° HIGH</p>
-            </div>
-        </div>
-			<hr size 45 shade 50px />
-			<br />
-			<p style="text-transform: uppercase" id="condition">PARTLY CLOUDY</p>
-			<br />
-			<i class="fas fa-cloud-sun center-icon" id=center-icon></i>
-			<hr size 45 shade 50px />
+			</br>	
+			<hr size 30 shade 50px />
+		
 	</br>	
 			<div class="container-fluid">
 				<div class="d-flex justify-content-around row-weekday-icons">
@@ -85,6 +120,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="container-fluid">
 				<div class="d-flex justify-content-around row-weekday">
 					<div class="col">WED</div>
@@ -96,6 +132,7 @@
 					<div class="col">TUE</div>
 				</div>
 			</div>
+
 			<div class="container-fluid">
 				<div class="d-flex justify-content-around row-weather-high">
 					<div class="col">84°</div>
@@ -107,6 +144,7 @@
 					<div class="col">84°</div>
 				</div>
 			</div>
+
 			<div class="container-fluid">
 				<div class="d-flex justify-content-around row-weather-low">
 					<div class="col">67°</div>
@@ -117,6 +155,7 @@
 					<div class="col">71°</div>
 					<div class="col">70°</div>
 				</div>
+
 			</div>
 		</div>
 		</div>
@@ -124,6 +163,7 @@
 		</div>
 		<script src="src/script.js"></script>
 	</body>
+</br>
 <div style="text-align:center"> 
 	<a	href="https://github.com/Miss-Karina/K_Dizzle_Weather_App_2021" target="_blank" class="open">Open - Source Code</a><strong style=color:white> by Karina Cisneros</strong>
 	</div>

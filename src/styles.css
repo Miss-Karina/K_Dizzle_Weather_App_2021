@@ -11,20 +11,21 @@ h2,
 h3,
 h4,
 p {
-	text-align: center;
 	font-family: 'Raleway', sans-serif;
 	color: white;
 }
 h1 {
-	font-size: 43px;
+	font-size: 39px;
 	margin: 0 auto;
+	display: block;
 }
 h2 {
 	font-size: 27px;
 }
 h3 {
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: thin 100px;
+	margin: 0 auto;
 }
 h4 {
 	font-size: 100px;
@@ -38,8 +39,15 @@ p {
 hr {
 	height: 3px;
 	color: white;
-	width: 566px;
 	margin: 0 auto;
+}
+ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0 auto;
+}
+li {
+	line-height: normal;
 }
 
 .app {
@@ -52,7 +60,6 @@ hr {
 	margin-right: auto;
 	margin-left: auto;
 	display: block;
-	padding: 40px;
 }
 .weather {
 	border-radius: 22px;
@@ -68,28 +75,20 @@ hr {
 .center-icon {
 	display: block;
 	margin: 0 auto;
-	font-size: 150px;
+	font-size: 80px;
 	text-shadow: 25;
-	text-align: center;
-	width: 100%;
-	padding: 0px 0px 30px 0px;
 	color: white;
+	padding-top: 60px;
 }
 .current-temp {
 	font-size: 100px;
 	color: white;
 	font-weight: 450px;
-	text-align: center;
 	margin: 0 auto;
 	display: block;
 }
 .celsius {
 	text-align: right;
-}
-.today-high-low {
-	padding: 0px;
-	height: 0px;
-	color: white;
 }
 a {
 	color: white;
@@ -98,17 +97,15 @@ a {
 a:hover {
 	color: gold;
 }
-.today-low {
-	position: relative;
-	top: -43px;
-	right: 162px;
+#low,
+#high {
 	color: white;
+	font-size: 20px;
 }
-.today-high {
-	position: relative;
-	top: -67px;
-	left: 162px;
-	color: white;
+
+#condition {
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .row-weekday-icons,
