@@ -75,10 +75,10 @@ li {
 .center-icon {
 	display: block;
 	margin: 0 auto;
-	font-size: 72px;
+	font-size: 58px;
 	text-shadow: 25;
 	color: white;
-	padding-top: 15px;
+	padding-top: 30px;
 }
 .current-temp {
 	font-size: 114px;
