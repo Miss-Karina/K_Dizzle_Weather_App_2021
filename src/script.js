@@ -84,6 +84,16 @@ function displayCurrentTemp(response) {
 
 	let condition = document.querySelector('#condition');
 	condition.innerHTML = response.data.weather[0].description;
+
+	let windSpeed = response.data.wind.speed;
+	console.log(response.data.wind.speed);
+	let displayWindSpeed = document.querySelector('#wind-speed');
+	displayWindSpeed.innerHTML = `WIND: ${windSpeed} Km/h`;
+
+	let humidity = response.data.main.humidity;
+	console.log(response.data.main.humidity);
+	let displayHumidity = document.querySelector('#humidity');
+	displayHumidity.innerHTML = `HUMIDITY: ${humidity} %`;
 }
 //Current Temperature Display
 

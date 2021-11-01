@@ -75,13 +75,13 @@ li {
 .center-icon {
 	display: block;
 	margin: 0 auto;
-	font-size: 80px;
+	font-size: 72px;
 	text-shadow: 25;
 	color: white;
-	padding-top: 60px;
+	padding-top: 15px;
 }
 .current-temp {
-	font-size: 100px;
+	font-size: 114px;
 	color: white;
 	font-weight: 450px;
 	margin: 0 auto;
@@ -101,6 +101,7 @@ a:hover {
 #high {
 	color: white;
 	font-size: 20px;
+	line-height: 57px;
 }
 
 #condition {
