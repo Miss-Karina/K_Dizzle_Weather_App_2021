@@ -76,7 +76,7 @@ function displayCurrentTemp(response) {
 
 	let currentLowTemp = Math.round(response.data.main.temp_min);
 	let displayLow = document.querySelector('#low');
-	displayLow.innerHTML = `${currentLowTemp}° //`;
+	displayLow.innerHTML = `${currentLowTemp}°/`;
 
 	let currentHighTemp = Math.round(response.data.main.temp_max);
 	let displayHigh = document.querySelector('#high');
@@ -88,7 +88,7 @@ function displayCurrentTemp(response) {
 	let windSpeed = response.data.wind.speed;
 	console.log(response.data.wind.speed);
 	let displayWindSpeed = document.querySelector('#wind-speed');
-	displayWindSpeed.innerHTML = `WIND: ${windSpeed} Km/h`;
+	displayWindSpeed.innerHTML = `WIND: ${windSpeed} mph`;
 
 	let humidity = response.data.main.humidity;
 	console.log(response.data.main.humidity);

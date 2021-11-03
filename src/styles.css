@@ -52,14 +52,16 @@ li {
 
 .app {
 	max-width: 800 px;
-	margin: 60 px auto;
 	box-sizing: border-box;
 }
-.container {
-	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-	display: block;
+.col-3 {
+	padding: 0px;
+}
+#icon-current-container {
+	padding: 0px;
+}
+.city-day-info {
+	padding: 10px;
 }
 .weather {
 	border-radius: 22px;
@@ -70,18 +72,18 @@ li {
 	display: block;
 	margin: 0 auto;
 	padding: 30px;
+	max-width: 700px;
 }
 
 .center-icon {
-	display: block;
 	margin: 0 auto;
 	font-size: 58px;
 	text-shadow: 25;
 	color: white;
-	padding-top: 30px;
+	padding-top: ;
 }
-.current-temp {
-	font-size: 114px;
+#current-temperature {
+	font-size: 79px;
 	color: white;
 	font-weight: 450px;
 	margin: 0 auto;
