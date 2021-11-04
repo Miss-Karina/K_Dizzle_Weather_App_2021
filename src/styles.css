@@ -45,9 +45,20 @@ ul {
 	list-style: none;
 	padding: 0px;
 	margin: 0 auto;
+	line-height: 1px;
 }
 li {
 	line-height: normal;
+}
+ul col-sm {
+	line-height: 1px;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	color: rgb(114, 112, 11);
 }
 
 .app {
@@ -55,14 +66,17 @@ li {
 	box-sizing: border-box;
 }
 .col-sm {
-	padding-top: 38px;
+	padding-top: 46px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 #units {
 	text-align: left;
 	max-width: 59px;
-	font-size: 24px;
-	padding: 62px 0px 0px 0px;
+	font-size: 28px;
+	position: relative;
+	top: -23px;
 }
 
 #icon-current-container {
@@ -100,13 +114,7 @@ li {
 	padding-right: 0px;
 	padding-left: 0px;
 }
-a {
-	color: white;
-	text-decoration: none;
-}
-a:hover {
-	color: gold;
-}
+
 #low,
 #high {
 	color: white;
