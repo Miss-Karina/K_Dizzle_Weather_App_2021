@@ -68,9 +68,7 @@ let todayTemp = document.querySelector('#current-temperaature');
 //Current Temperature Display
 function displayCurrentTemp(response) {
 	console.log(response);
-	console.log(response.data.main.temp);
 	let temperature = Math.round(response.data.main.temp);
-	console.log(temperature);
 	let currentTempDisplay = document.querySelector('#current-temperature');
 	currentTempDisplay.innerHTML = `${temperature}°`;
 
@@ -85,10 +83,10 @@ function displayCurrentTemp(response) {
 	let condition = document.querySelector('#condition');
 	condition.innerHTML = response.data.weather[0].description;
 
-	let windSpeed = response.data.wind.speed;
+	let windSpeed = Math.round(response.data.wind.speed);
 	console.log(response.data.wind.speed);
 	let displayWindSpeed = document.querySelector('#wind-speed');
-	displayWindSpeed.innerHTML = `WIND: ${windSpeed} kh/m`;
+	displayWindSpeed.innerHTML = `WIND: <strong>${windSpeed}</strong> kh/m`;
 
 	let humidity = response.data.main.humidity;
 	console.log(response.data.main.humidity);

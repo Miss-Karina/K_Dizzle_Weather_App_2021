@@ -15,7 +15,7 @@ p {
 	color: white;
 }
 h1 {
-	font-size: 39px;
+	font-size: 34px;
 	margin: 0 auto;
 	display: block;
 }
@@ -65,27 +65,20 @@ a:hover {
 	max-width: 800 px;
 	box-sizing: border-box;
 }
+.city-day-info {
+	padding: 10px;
+}
 .col-sm {
-	padding-top: 46px;
 	padding-left: 0;
 	padding-right: 0;
-}
-
-#units {
-	text-align: left;
-	max-width: 59px;
-	font-size: 28px;
 	position: relative;
-	top: -23px;
+	top: 43px;
 }
 
 #icon-current-container {
 	padding: 0px;
 	max-width: 100px;
 	text-align: right;
-}
-.city-day-info {
-	padding: 10px;
 }
 .weather {
 	border-radius: 22px;
@@ -104,7 +97,6 @@ a:hover {
 	font-size: 58px;
 	text-shadow: 25;
 	color: white;
-	padding-top: ;
 }
 #current-temperature {
 	font-size: 79px;
@@ -120,6 +112,10 @@ a:hover {
 	color: white;
 	font-size: 20px;
 	line-height: 57px;
+}
+#low-high {
+	position: relative;
+	top: -8px;
 }
 
 #condition {
@@ -147,4 +143,12 @@ a:hover {
 	font-family: 'Raleway', sans-serif;
 	justify-content: center;
 	margin-bottom: 20px;
+}
+#units {
+	text-align: left;
+	max-width: 59px;
+	font-size: 17px;
+	position: relative;
+	right: 14px;
+	top: -22px;
 }
