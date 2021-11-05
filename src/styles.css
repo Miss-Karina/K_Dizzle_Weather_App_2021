@@ -92,11 +92,8 @@ a:hover {
 	max-width: 700px;
 }
 
-.center-icon {
+#center-icon {
 	margin: 0 auto;
-	font-size: 58px;
-	text-shadow: 25;
-	color: white;
 }
 #current-temperature {
 	font-size: 79px;
