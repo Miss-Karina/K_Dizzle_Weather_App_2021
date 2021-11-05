@@ -93,9 +93,11 @@ function displayCurrentTemp(response) {
 	let displayHumidity = document.querySelector('#humidity');
 	displayHumidity.innerHTML = `HUMIDITY: ${humidity} %`;
 
-	let displayMainIcon = document.querySelector('#center-icon');
-	displayMainIcon.setAttribute =
-		('src', 'http://openweathermap.org/img/wn/10d@2x.png');
+	let iconChange = response.data.weather[0].icon;
+	console.log(response.data.weather[0].icon);
+	let displayIconChange = document.querySelector('#center-icon');
+	displayIconChange.setAttribute =
+		('src', `http://openweathermap.org/img/wn/${iconChange}@2x.png`);
 }
 //Current Temperature Display
 
