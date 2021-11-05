@@ -23,7 +23,7 @@ h2 {
 	font-size: 27px;
 }
 h3 {
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: thin 100px;
 	margin: 0 auto;
 }
@@ -75,7 +75,7 @@ a:hover {
 	top: 43px;
 }
 
-#icon-current-container {
+#icon-current {
 	padding: 0px;
 	max-width: 131px;
 	text-align: right;

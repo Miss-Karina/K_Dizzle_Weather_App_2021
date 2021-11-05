@@ -29,7 +29,7 @@ let minutes = currentDayTime.getMinutes();
 if (minutes < 10) {
 	minutes = `0${minutes}`;
 }
-h3.innerHTML = `${currentDay} ${currentHour}:${minutes}`;
+h3.innerHTML = `Last updated on : ${currentDay} ${currentHour}:${minutes}`;
 // Current Day/Time--------------
 
 function search(event) {
@@ -92,6 +92,10 @@ function displayCurrentTemp(response) {
 	console.log(response.data.main.humidity);
 	let displayHumidity = document.querySelector('#humidity');
 	displayHumidity.innerHTML = `HUMIDITY: ${humidity} %`;
+
+	let mainIcon = document.querySelector('#center-icon');
+	mainIcon.setAttribute =
+		('src', `http://openweathermap.org/img/wn/10d@2x.png`);
 }
 //Current Temperature Display
 
