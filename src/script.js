@@ -96,8 +96,10 @@ function displayCurrentTemp(response) {
 	let iconChange = response.data.weather[0].icon;
 	console.log(response.data.weather[0].icon);
 	let displayIconChange = document.querySelector('#center-icon');
-	displayIconChange.setAttribute =
-		('src', `http://openweathermap.org/img/wn/${iconChange}@2x.png`);
+	displayIconChange.setAttribute(
+		'src',
+		`http://openweathermap.org/img/wn/${iconChange}@2x.png`,
+	);
 }
 //Current Temperature Display
 
