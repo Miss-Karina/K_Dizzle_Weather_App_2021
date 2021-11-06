@@ -57,8 +57,14 @@ function displayCelsiusTemperature(event) {
 let celsiusLink = document.querySelector('#celsius-link');
 celsiusLink.addEventListener('click', displayCelsiusTemperature);
 
-////////let fahrenheitTemp = document.querySelector('#fahrenheit-link');
-////////fahrenheitTemp.addEventListener('click', fahrenheitChange);
+function displayFahrenheitTemperature(event) {
+	event.preventDefault();
+	let fahrenheitTemperature = Math.round((29 * 9) / 5 + 32);
+	let currentTempDisplay = document.querySelector('#current-temperature');
+	currentTempDisplay.innerHTML = `${fahrenheitTemperature}°`;
+}
+let fahrenheitLink = document.querySelector('#fahrenheit-link');
+fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
 
 //Celsius & Fahrenheit Changes -------------
 
