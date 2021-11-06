@@ -48,12 +48,14 @@ searchForm.addEventListener('submit', search);
 
 //Celsius & Fahrenheit Changes -------------
 
-function celsiusTemperature(event) {
+function displayCelsiusTemperature(event) {
 	event.preventDefault();
-	alert('link clicked');
+	let celsiusTemperature = Math.round(((84 - 32) * 5) / 9);
+	let currentTempDisplay = document.querySelector('#current-temperature');
+	currentTempDisplay.innerHTML = `${celsiusTemperature}°`;
 }
-let celsiusTemp = document.querySelector('#celsius-link');
-celsiusTemp.addEventListener('click', celsiusTemperature);
+let celsiusLink = document.querySelector('#celsius-link');
+celsiusLink.addEventListener('click', displayCelsiusTemperature);
 
 ////////let fahrenheitTemp = document.querySelector('#fahrenheit-link');
 ////////fahrenheitTemp.addEventListener('click', fahrenheitChange);

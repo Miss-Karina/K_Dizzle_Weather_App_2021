@@ -68,15 +68,16 @@ a:hover {
 .city-day-info {
 	padding: 10px;
 }
-#current-temp-unit-container {
-	max-width: 165px;
-}
+
 .col-sm {
 	padding-left: 0;
 	padding-right: 0;
-	padding-top: 46px;
+	padding-top: 14px;
 	position: relative;
 	left: -31px;
+}
+#current-temp-unit-container {
+	width: 190px;
 }
 
 #icon-current {
@@ -95,7 +96,7 @@ a:hover {
 	display: block;
 	margin: 0 auto;
 	padding: 30px;
-	max-width: 700px;
+	max-width: 762px;
 }
 
 #current-temperature {
@@ -150,7 +151,12 @@ a:hover {
 }
 #units {
 	font-size: 15px;
-position:relative;
-top:-77px;
-right:-137px;
-
+	position: relative;
+	top: -30px;
+	right: 2px;
+}
+#unit-container {
+	position: relative;
+	top: -39px;
+	left: 133px;
+}
