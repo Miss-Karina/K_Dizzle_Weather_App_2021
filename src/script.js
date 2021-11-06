@@ -29,7 +29,7 @@ let minutes = currentDayTime.getMinutes();
 if (minutes < 10) {
 	minutes = `0${minutes}`;
 }
-h3.innerHTML = `Last updated on : ${currentDay} ${currentHour}:${minutes}`;
+h3.innerHTML = `Last updated on :: ${currentDay} ${currentHour}:${minutes}`;
 // Current Day/Time--------------
 
 function search(event) {
@@ -46,34 +46,11 @@ function search(event) {
 let searchForm = document.querySelector('#search-form');
 searchForm.addEventListener('submit', search);
 
-//Celsius & Fahrenheit Changes -------------
-
-function displayCelsiusTemperature(event) {
-	event.preventDefault();
-	let celsiusTemperature = Math.round(((84 - 32) * 5) / 9);
-	let currentTempDisplay = document.querySelector('#current-temperature');
-	currentTempDisplay.innerHTML = `${celsiusTemperature}°`;
-}
-let celsiusLink = document.querySelector('#celsius-link');
-celsiusLink.addEventListener('click', displayCelsiusTemperature);
-
-function displayFahrenheitTemperature(event) {
-	event.preventDefault();
-	let fahrenheitTemperature = Math.round((29 * 9) / 5 + 32);
-	let currentTempDisplay = document.querySelector('#current-temperature');
-	currentTempDisplay.innerHTML = `${fahrenheitTemperature}°`;
-}
-let fahrenheitLink = document.querySelector('#fahrenheit-link');
-fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
-
-//Celsius & Fahrenheit Changes -------------
-
 //Current Temperature Display
 function displayCurrentTemp(response) {
 	console.log(response);
-	let temperature = Math.round(response.data.main.temp);
 	let currentTempDisplay = document.querySelector('#current-temperature');
-	currentTempDisplay.innerHTML = `${temperature}°`;
+	currentTempDisplay.innerHTML = Math.round(globalFahrenheitTemperature);
 
 	let currentLowTemp = Math.round(response.data.main.temp_min);
 	let displayLow = document.querySelector('#low');
@@ -96,6 +73,8 @@ function displayCurrentTemp(response) {
 	let displayHumidity = document.querySelector('#humidity');
 	displayHumidity.innerHTML = `HUMIDITY: ${humidity} %`;
 
+	globalFahrenheitTemperature = response.data.main.temp;
+
 	let iconChange = response.data.weather[0].icon;
 	console.log(response.data.weather[0].icon);
 	let displayIconChange = document.querySelector('#center-icon');
@@ -105,6 +84,30 @@ function displayCurrentTemp(response) {
 	);
 }
 //Current Temperature Display
+
+//Celsius & Fahrenheit Changes -------------
+
+function displayCelsiusTemperature(event) {
+	event.preventDefault();
+	let celsiusTemperature = (globalFahrenheitTemperature - 32 * 5) / 9;
+	let currentTempDisplay = document.querySelector('#current-temperature');
+	currentTempDisplay.innerHTML = Math.round(celsiusTemperature);
+}
+
+function displayFahrenheitTemperature(event) {
+	event.preventDefault();
+	let fahrenheitTemperature = document.querySelector('#current-temperature');
+	fahrenheitTemperature.innerHTML = Math.round(globalFahrenheitTemperature);
+}
+let celsiusLink = document.querySelector('#celsius-link');
+celsiusLink.addEventListener('click', displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector('#fahrenheit-link');
+fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
+
+let globalFahrenheitTemperature = null;
+
+//Celsius & Fahrenheit Changes -------------
 
 function showPosition(position) {
 	let lat = position.coords.latitude;

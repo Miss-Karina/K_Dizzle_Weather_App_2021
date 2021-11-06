@@ -57,8 +57,18 @@ a {
 	color: white;
 	text-decoration: none;
 }
+
+.active {
+	color: white;
+	cursor: default;
+}
+.active:hover {
+	text-decoration: none;
+	color: white;
+}
 a:hover {
 	color: rgb(114, 112, 11);
+	text-decoration: underline;
 }
 
 .app {
@@ -111,12 +121,14 @@ a:hover {
 }
 #center-icon {
 	object-fit: none;
+	position: relative;
+	top: 9px;
 }
 
 #low,
 #high {
 	color: white;
-	font-size: 20px;
+	font-size: 17px;
 	line-height: 57px;
 }
 #low-high {
