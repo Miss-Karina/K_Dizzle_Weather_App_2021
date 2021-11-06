@@ -47,20 +47,15 @@ let searchForm = document.querySelector('#search-form');
 searchForm.addEventListener('submit', search);
 
 //Celsius & Fahrenheit Changes -------------
-function celsiusChange(event) {
-	event.preventDefault();
-	todayTemp.innerHTML = '29';
-}
-function fahrenheitChange(event) {
-	event.preventDefault();
-	todayTemp.innerHTML = '84';
-}
-let todayTemp = document.querySelector('#current-temperaature');
 
-////////let celsiusTemp = document.querySelector('#celsius');
-////////celsiusTemp.addEventListener('click', celsiusChange);
+function celsiusTemperature(event) {
+	event.preventDefault();
+	alert('link clicked');
+}
+let celsiusTemp = document.querySelector('#celsius-link');
+celsiusTemp.addEventListener('click', celsiusTemperature);
 
-////////let fahrenheitTemp = document.querySelector('#fahrenheit');
+////////let fahrenheitTemp = document.querySelector('#fahrenheit-link');
 ////////fahrenheitTemp.addEventListener('click', fahrenheitChange);
 
 //Celsius & Fahrenheit Changes -------------

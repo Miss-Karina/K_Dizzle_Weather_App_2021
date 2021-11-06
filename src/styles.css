@@ -4,18 +4,18 @@ body {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	background: radial-gradient(#09203f 0%, #537895 100%);
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Spartan', sans-serif;
 }
 h1,
 h2,
 h3,
 h4,
 p {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Spartan', sans-serif;
 	color: white;
 }
 h1 {
-	font-size: 34px;
+	font-size: 27px;
 	margin: 0 auto;
 	display: block;
 }
@@ -23,9 +23,9 @@ h2 {
 	font-size: 27px;
 }
 h3 {
-	font-size: 15px;
-	font-weight: thin 100px;
+	font-size: 13px;
 	margin: 0 auto;
+	line-height: 28px;
 }
 h4 {
 	font-size: 100px;
@@ -48,7 +48,7 @@ ul {
 	line-height: 1px;
 }
 li {
-	line-height: normal;
+	line-height: 21px;
 }
 ul col-sm {
 	line-height: 1px;
@@ -68,17 +68,23 @@ a:hover {
 .city-day-info {
 	padding: 10px;
 }
+#current-temp-unit-container {
+	max-width: 165px;
+}
 .col-sm {
 	padding-left: 0;
 	padding-right: 0;
+	padding-top: 46px;
 	position: relative;
-	top: 26px;
+	left: -31px;
 }
 
 #icon-current {
-	padding: 0px;
-	max-width: 131px;
+	max-width: 128px;
 	text-align: right;
+	position: relative;
+	top: -14px;
+	left: 31px;
 }
 .weather {
 	border-radius: 22px;
@@ -99,6 +105,8 @@ a:hover {
 	margin: 0 auto;
 	padding-right: 0px;
 	padding-left: 0px;
+	position: relative;
+	left: 4px;
 }
 #center-icon {
 	object-fit: none;
@@ -137,14 +145,12 @@ a:hover {
 	color: white;
 }
 .row-search-bar {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Spartan', sans-serif;
 	justify-content: center;
 }
 #units {
-	text-align: left;
-	max-width: 59px;
-	font-size: 17px;
-	position: relative;
-	right: 14px;
-	top: -15px;
-}
+	font-size: 15px;
+position:relative;
+top:-77px;
+right:-137px;
+
