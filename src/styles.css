@@ -102,7 +102,6 @@ a:hover {
 }
 #center-icon {
 	object-fit: none;
-	filter: grayscale(100px);
 }
 
 #low,
@@ -140,7 +139,6 @@ a:hover {
 .row-search-bar {
 	font-family: 'Raleway', sans-serif;
 	justify-content: center;
-	margin-bottom: 20px;
 }
 #units {
 	text-align: left;
