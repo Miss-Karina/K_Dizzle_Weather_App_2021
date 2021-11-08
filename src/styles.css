@@ -87,7 +87,7 @@ a:hover {
 	left: -31px;
 }
 #current-temp-unit-container {
-	width: 190px;
+	width: 200px;
 }
 
 #icon-current {
@@ -114,8 +114,6 @@ a:hover {
 	color: white;
 	font-weight: 450px;
 	margin: 0 auto;
-	padding-right: 0px;
-	padding-left: 0px;
 	position: relative;
 	left: 4px;
 }
