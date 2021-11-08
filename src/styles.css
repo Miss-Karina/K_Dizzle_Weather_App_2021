@@ -121,7 +121,7 @@ a:hover {
 }
 #center-icon {
 	content: icon;
-	width: 70px;
+	width: 100px;
 	position: relative;
 	top: 9px;
 }
