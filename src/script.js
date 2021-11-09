@@ -19,7 +19,26 @@ searchForm.addEventListener('submit', search);
 //Current Forecast Display -------------
 function displayForecast() {
 	let forecastElement = document.querySelector('#forecast');
-	forecastElement.innerHTML = 'Forecast';
+	forecastElement.innerHTML = `
+	<div class="row">
+		<div class="col">
+			<div class ="weather-forecast-preview">
+				<div class="forecast-day">
+					TUES
+				</div>
+			<img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" canvas width = "38px" height="38px"
+							 id="weekly-forecast-icon"/>
+							 </div>
+							 <div class="forecast-temperature">
+								 <span class="forecast-temp-high">
+									 81°
+								 </span>
+								 <span class="forecast-temp-low">
+									 63°
+								 </span>
+			</div>
+		</div>
+		</div>`;
 }
 //Current Forecast Display -------------
 
@@ -73,7 +92,6 @@ function displayCurrentTemp(response) {
 //Current Temperature Display -------------
 
 //Celsius & Fahrenheit Changes -------------
-
 function displayCelsiusTemperature(event) {
 	event.preventDefault();
 	let celsiusTemperature = (globalFahrenheitTemperature - 32 * 5) / 9;
@@ -126,6 +144,6 @@ if (minutes < 10) {
 }
 h3.innerHTML = `Last updated : ${currentDay} ${currentHour}:${minutes} (GMT-6)`;
 // Current Day/Time --------------
-displayForecast();
 
+displayForecast();
 navigator.geolocation.getCurrentPosition(showPosition);
