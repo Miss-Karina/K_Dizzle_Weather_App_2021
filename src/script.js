@@ -80,7 +80,7 @@ function displayCurrentTemp(response) {
 	let displayIconChange = document.querySelector('#center-icon');
 	displayIconChange.setAttribute(
 		'src',
-		`http://openweathermap.org/img/wn/${iconChange}@2x.png`,
+		`https://openweathermap.org/img/wn/${iconChange}@2x.png`,
 	);
 }
 //Current Temperature Display
