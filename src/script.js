@@ -1,37 +1,6 @@
 /** @format */
 
-// Current Day/Time--------------
-let currentDayTime = new Date();
-console.log(currentDayTime);
-console.log(currentDayTime.getDay());
-console.log(currentDayTime.getMinutes());
-console.log(currentDayTime.getHours());
-
-let days = [
-	'Sunday',
-	'Monday',
-	'Tuesday',
-	'Wednesday',
-	'Thursday',
-	'Friday',
-	'Saturday',
-];
-
-let h3 = document.querySelector('h3');
-let currentDate = currentDayTime.getDate();
-let currentMinutes = currentDayTime.getMinutes();
-let currentHour = currentDayTime.getHours();
-let currentDay = days[currentDayTime.getDay()];
-
-console.log(days[currentDayTime.getDay()]);
-
-let minutes = currentDayTime.getMinutes();
-if (minutes < 10) {
-	minutes = `0${minutes}`;
-}
-h3.innerHTML = `Last updated : ${currentDay} ${currentHour}:${minutes} (GMT-6)`;
-// Current Day/Time--------------
-
+// Search Bar --------------
 function search(event) {
 	event.preventDefault();
 	let searchInput = document.querySelector('#city-input');
@@ -45,8 +14,26 @@ function search(event) {
 
 let searchForm = document.querySelector('#search-form');
 searchForm.addEventListener('submit', search);
+// Search Bar --------------
 
-//Current Temperature Display
+//Current Forecast Display -------------
+function displayForecast() {
+	let forecastElement = document.querySelector('#forecast');
+	forecastElement.innerHTML = 'Forecast';
+}
+//Current Forecast Display -------------
+
+//API Call -------------
+function showPosition(position) {
+	let lat = position.coords.latitude;
+	let lon = position.coords.longitude;
+	let apiKey = '1fd8093fa5ff12d796d7de756cc9d6b9';
+	let geoUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+	axios.get(geoUrl).then(displayCurrentTemp);
+}
+//API Call -------------
+
+//Current Temperature Display -------------
 function displayCurrentTemp(response) {
 	console.log(response);
 	let currentTempDisplay = document.querySelector('#current-temperature');
@@ -83,7 +70,7 @@ function displayCurrentTemp(response) {
 		`https://openweathermap.org/img/wn/${iconChange}@2x.png`,
 	);
 }
-//Current Temperature Display
+//Current Temperature Display -------------
 
 //Celsius & Fahrenheit Changes -------------
 
@@ -106,15 +93,39 @@ let fahrenheitLink = document.querySelector('#fahrenheit-link');
 fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
 
 let globalFahrenheitTemperature = null;
-
 //Celsius & Fahrenheit Changes -------------
 
-function showPosition(position) {
-	let lat = position.coords.latitude;
-	let lon = position.coords.longitude;
-	let apiKey = '1fd8093fa5ff12d796d7de756cc9d6b9';
-	let geoUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
-	axios.get(geoUrl).then(displayCurrentTemp);
+// Current Day/Time --------------
+let currentDayTime = new Date();
+console.log(currentDayTime);
+console.log(currentDayTime.getDay());
+console.log(currentDayTime.getMinutes());
+console.log(currentDayTime.getHours());
+
+let days = [
+	'Sunday',
+	'Monday',
+	'Tuesday',
+	'Wednesday',
+	'Thursday',
+	'Friday',
+	'Saturday',
+];
+
+let h3 = document.querySelector('h3');
+let currentDate = currentDayTime.getDate();
+let currentMinutes = currentDayTime.getMinutes();
+let currentHour = currentDayTime.getHours();
+let currentDay = days[currentDayTime.getDay()];
+
+console.log(days[currentDayTime.getDay()]);
+
+let minutes = currentDayTime.getMinutes();
+if (minutes < 10) {
+	minutes = `0${minutes}`;
 }
+h3.innerHTML = `Last updated : ${currentDay} ${currentHour}:${minutes} (GMT-6)`;
+// Current Day/Time --------------
+displayForecast();
 
 navigator.geolocation.getCurrentPosition(showPosition);
