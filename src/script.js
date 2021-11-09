@@ -29,7 +29,7 @@ let minutes = currentDayTime.getMinutes();
 if (minutes < 10) {
 	minutes = `0${minutes}`;
 }
-h3.innerHTML = `Last updated on :: ${currentDay} ${currentHour}:${minutes} (GMT-6)`;
+h3.innerHTML = `Last updated : ${currentDay} ${currentHour}:${minutes} (GMT-6)`;
 // Current Day/Time--------------
 
 function search(event) {

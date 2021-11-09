@@ -122,6 +122,7 @@ a:hover {
 	width: 70px;
 	position: relative;
 	top: 9px;
+	object-fit: none;
 }
 
 #low,
@@ -164,7 +165,7 @@ a:hover {
 	font-size: 15px;
 	position: relative;
 	top: -30px;
-	right: 2px;
+	right: -8px;
 }
 #unit-container {
 	position: relative;
