@@ -142,25 +142,10 @@ a:hover {
 	font-weight: bold;
 }
 
-.row-weekday-icons,
-.row-weekday,
-.row-weather-high,
-.row-weather-low {
-	justify-content: space-between;
-	flex-wrap: nowrap;
-	flex-direction: row;
-	grid-row: initial;
-	margin: 0 auto;
-	text-align: center;
-	color: white;
-}
-.row-weather-low {
+.forecast-temp-low {
 	opacity: 0.5;
 }
-.row-weekday-icons {
-	font-size: 30px;
-	color: white;
-}
+
 .row-search-bar {
 	font-family: 'Spartan', sans-serif;
 	justify-content: center;
@@ -175,4 +160,7 @@ a:hover {
 	position: relative;
 	top: -39px;
 	left: 133px;
+}
+.weather-forecast {
+	text-align: center;
 }
