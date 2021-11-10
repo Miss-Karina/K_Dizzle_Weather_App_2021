@@ -19,7 +19,8 @@ searchForm.addEventListener('submit', search);
 //Current Forecast Display -------------
 function displayForecast() {
 	let forecastElement = document.querySelector('#forecast');
-	forecastElement.innerHTML = `
+	let forecastHTML = '';
+	forecastHTML = `
 	<div class="row">
 		<div class="col">
 			<div class ="weather-forecast-preview">
@@ -39,6 +40,7 @@ function displayForecast() {
 			</div>
 		</div>
 		</div>`;
+	forecastElement.innerHTML = forecastHTML;
 }
 //Current Forecast Display -------------
 
