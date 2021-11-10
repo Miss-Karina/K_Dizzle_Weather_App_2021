@@ -19,17 +19,16 @@ searchForm.addEventListener('submit', search);
 //Current Forecast Display -------------
 function displayForecast() {
 	let forecastElement = document.querySelector('#forecast');
-	let forecastHTML = '';
-	forecastHTML = `
-	<div class="row">
-		<div class="col">
-			<div class ="weather-forecast-preview">
-				<div class="forecast-day">
-					TUES
-				</div>
+	let forecastHTML = `<div class="row">`; //This is my row now
+	let days = ['Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tues', 'Wed'];
+	days.forEach(function (day) {
+		forecastHTML =
+			forecastHTML + //This is my grid where I can inject multiple columns
+			` 
+		<div class="col-2">
+			<div class ="weather-forecast-date">${day}</div>
 			<img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" canvas width = "38px" height="38px"
 							 id="weekly-forecast-icon"/>
-							 </div>
 							 <div class="forecast-temperature">
 								 <span class="forecast-temp-high">
 									 81°
@@ -37,9 +36,10 @@ function displayForecast() {
 								 <span class="forecast-temp-low">
 									 63°
 								 </span>
-			</div>
-		</div>
-		</div>`;
+								</div>
+			</div>`;
+	});
+	forecastHTML = forecastHTML + `</div>`;
 	forecastElement.innerHTML = forecastHTML;
 }
 //Current Forecast Display -------------

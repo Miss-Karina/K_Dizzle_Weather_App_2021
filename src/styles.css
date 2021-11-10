@@ -87,6 +87,11 @@ a:hover {
 	position: relative;
 	left: -31px;
 }
+.col-2 {
+	width: 101px;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+}
 #current-temp-unit-container {
 	width: 200px;
 }
