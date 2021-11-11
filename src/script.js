@@ -16,6 +16,17 @@ let searchForm = document.querySelector('#search-form');
 searchForm.addEventListener('submit', search);
 // Search Bar --------------
 
+// Weekly Forecast Day --------------
+function weeklyForecastDay(timestamp) {
+	console.log(timestamp);
+	let date = new Date(timestamp * 1000);
+	let day = date.getDay();
+
+	let days = ['SUN', 'MON', 'TUES', 'WED', 'THUR', 'FRI', 'SAT'];
+	return days[day];
+}
+// Weekly Forecast Day --------------
+
 //Current Forecast Display -------------
 function displayForecast(response) {
 	console.log(response);
@@ -25,20 +36,11 @@ function displayForecast(response) {
 
 	let forecastHTML = `<div class="row">`; //This is my row now
 
-	// Weekly Forecast Day --------------
-	function weeklyForecastDay(timestamp) {
-		let date = new Date(timestamp * 1000);
-		let day = date.getDay();
-
-		let days = ['SUN', 'MON', 'TUES', 'WED', 'THUR', 'FRI', 'SAT'];
-		return days[day];
-	}
-	// Weekly Forecast Day --------------
-
-	weeklyForecast.forEach(function (forecastDay) {
-		forecastHTML =
-			forecastHTML + //This is my grid where I can inject multiple columns
-			` 
+	weeklyForecast.forEach(function (forecastDay, index) {
+		if (index < 7) {
+			forecastHTML =
+				forecastHTML + //This is my grid where I can inject multiple columns
+				` 
 		<div class="col-2">
 			<div class ="weather-forecast-date">${weeklyForecastDay(forecastDay.dt)}</div>
 			<img src="https://openweathermap.org/img/wn/${
@@ -54,6 +56,7 @@ function displayForecast(response) {
 								 </span>
 								</div>
 			</div>`;
+		}
 	});
 	forecastHTML = forecastHTML + `</div>`;
 	forecastElement.innerHTML = forecastHTML;
@@ -73,10 +76,11 @@ function showPosition(position) {
 //API Call Current Temp Display -------------
 
 //API Call Current Forecast Display -------------
-function showForecastPosition(position) {
-	console.log(position);
-	let lat = position.coords.latitude;
-	let lon = position.coords.longitude;
+function showForecastPosition(coordinates) {
+	console.log(coordinates);
+	console.log(coordinates.coords.latitude);
+	let lat = coordinates.coords.latitude;
+	let lon = coordinates.coords.longitude;
 	let apiKey = '1fd8093fa5ff12d796d7de756cc9d6b9';
 	let geoUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 	console.log(geoUrl);
@@ -88,39 +92,39 @@ function showForecastPosition(position) {
 function displayCurrentTemp(response) {
 	console.log(response);
 	let currentTempDisplay = document.querySelector('#current-temperature');
-	currentTempDisplay.innerHTML = Math.round(response.data.current.temp);
+	currentTempDisplay.innerHTML = Math.round(response.data.main.temp);
 
-	let currentLowTemp = Math.round(response.data.daily[0].temp.min);
+	let currentLowTemp = Math.round(response.data.main.temp_min);
 	let displayLow = document.querySelector('#low');
 	displayLow.innerHTML = `${currentLowTemp}°/`;
 
-	let currentHighTemp = Math.round(response.data.daily[0].temp.max);
+	let currentHighTemp = Math.round(response.data.main.temp_max);
 	let displayHigh = document.querySelector('#high');
 	displayHigh.innerHTML = `${currentHighTemp}°`;
 
 	let condition = document.querySelector('#condition');
-	condition.innerHTML = response.data.daily[0].weather[0].description;
+	condition.innerHTML = response.data.weather[0].description;
 
-	let windSpeed = Math.round(response.data.daily[0].wind_speed);
-	console.log(response.data.daily[0].weather[0].wind_speed);
+	let windSpeed = Math.round(response.data.wind.speed);
+	console.log(response.data.wind.speed);
 	let displayWindSpeed = document.querySelector('#wind-speed');
 	displayWindSpeed.innerHTML = `WIND: <strong>${windSpeed}</strong> kh/m`;
 
-	let humidity = response.data.daily[0].humidity;
-	console.log(response.data.daily[0].humidity);
+	let humidity = response.data.main.humidity;
+	console.log(response.data.main.humidity);
 	let displayHumidity = document.querySelector('#humidity');
 	displayHumidity.innerHTML = `HUMIDITY: ${humidity} %`;
 
-	globalFahrenheitTemperature = response.data.current.temp;
+	globalFahrenheitTemperature = response.data.main.temp;
 
-	let iconChange = response.data.daily[0].weather[0].icon;
-	console.log(response.data.daily[0].weather[0].icon);
+	let iconChange = response.data.weather[0].icon;
+	console.log(response.data.weather[0].icon);
 	let displayIconChange = document.querySelector('#center-icon');
 	displayIconChange.setAttribute(
 		'src',
 		`https://openweathermap.org/img/wn/${iconChange}@2x.png`,
 	);
-	showForecastPosition(response.data.coord);
+	showPosition(response.data.coord);
 }
 //Current Temperature Display -------------
 
