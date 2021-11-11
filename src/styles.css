@@ -149,6 +149,9 @@ a:hover {
 .forecast-temp-low {
 	opacity: 0.5;
 }
+.forecast-temperature {
+	text-align: center;
+}
 
 .row-search-bar {
 	font-family: 'Spartan', sans-serif;

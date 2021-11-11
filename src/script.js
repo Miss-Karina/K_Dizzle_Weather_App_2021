@@ -17,10 +17,13 @@ searchForm.addEventListener('submit', search);
 // Search Bar --------------
 
 //Current Forecast Display -------------
-function displayForecast() {
+function displayForecast(response) {
+	console.log(response.data);
 	let forecastElement = document.querySelector('#forecast');
-	let forecastHTML = `<div class="row">`; //This is my row now
 	let days = ['Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tues', 'Wed'];
+
+	let forecastHTML = `<div class="row">`; //This is my row now
+
 	days.forEach(function (day) {
 		forecastHTML =
 			forecastHTML + //This is my grid where I can inject multiple columns
@@ -46,11 +49,13 @@ function displayForecast() {
 
 //API Call -------------
 function showPosition(position) {
+	console.log(position);
 	let lat = position.coords.latitude;
 	let lon = position.coords.longitude;
 	let apiKey = '1fd8093fa5ff12d796d7de756cc9d6b9';
-	let geoUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
-	axios.get(geoUrl).then(displayCurrentTemp);
+	let geoUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+	console.log(geoUrl);
+	axios.get(geoUrl).then(displayForecast);
 }
 //API Call -------------
 
@@ -90,6 +95,7 @@ function displayCurrentTemp(response) {
 		'src',
 		`https://openweathermap.org/img/wn/${iconChange}@2x.png`,
 	);
+	showPosition(response.data.cord);
 }
 //Current Temperature Display -------------
 
@@ -147,5 +153,4 @@ if (minutes < 10) {
 h3.innerHTML = `Last updated : ${currentDay} ${currentHour}:${minutes} (GMT-6)`;
 // Current Day/Time --------------
 
-displayForecast();
 navigator.geolocation.getCurrentPosition(showPosition);
