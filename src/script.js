@@ -18,26 +18,27 @@ searchForm.addEventListener('submit', search);
 
 //Current Forecast Display -------------
 function displayForecast(response) {
-	console.log(response.data);
+	console.log(response.data.daily);
+	let weeklyForecast = response.data.daily;
 	let forecastElement = document.querySelector('#forecast');
 	let days = ['Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tues', 'Wed'];
 
 	let forecastHTML = `<div class="row">`; //This is my row now
 
-	days.forEach(function (day) {
+	weeklyForecast.forEach(function (forecastDay) {
 		forecastHTML =
 			forecastHTML + //This is my grid where I can inject multiple columns
 			` 
 		<div class="col-2">
-			<div class ="weather-forecast-date">${day}</div>
-			<img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" canvas width = "38px" height="38px"
+			<div class ="weather-forecast-date">${forecastDay.dt}</div>
+			<img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="75px"
 							 id="weekly-forecast-icon"/>
 							 <div class="forecast-temperature">
 								 <span class="forecast-temp-high">
-									 81°
+									 ${forecastDay.temp.max}°
 								 </span>
 								 <span class="forecast-temp-low">
-									 63°
+									 ${forecastDay.temp.min}°
 								 </span>
 								</div>
 			</div>`;
