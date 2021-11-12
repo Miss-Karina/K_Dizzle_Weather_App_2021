@@ -168,7 +168,9 @@ a:hover {
 	font-family: 'Spartan', sans-serif;
 	justify-content: center;
 }
-
+.open {
+	opacity: 0.5;
+}
 #units {
 	font-size: 15px;
 	position: relative;

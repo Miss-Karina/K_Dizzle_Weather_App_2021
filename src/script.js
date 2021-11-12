@@ -107,7 +107,7 @@ function displayCurrentTemp(response) {
 	let windSpeed = Math.round(response.data.wind.speed);
 	console.log(response.data.wind.speed);
 	let displayWindSpeed = document.querySelector('#wind-speed');
-	displayWindSpeed.innerHTML = `WIND SPEED : <strong>${windSpeed}</strong> kh/m`;
+	displayWindSpeed.innerHTML = `WIND SPEED : <strong>${windSpeed}</strong> m/h`;
 
 	let humidity = response.data.main.humidity;
 	console.log(response.data.main.humidity);
