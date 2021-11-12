@@ -91,7 +91,7 @@ function showForecastPosition(coordinates) {
 function displayCurrentTemp(response) {
 	console.log(response);
 	let currentTempDisplay = document.querySelector('#current-temperature');
-	currentTempDisplay.innerHTML = Math.round(response.data.main.temp);
+	currentTempDisplay.innerHTML = `${Math.round(response.data.main.temp)}°`;
 
 	let currentLowTemp = Math.round(response.data.main.temp_min);
 	let displayLow = document.querySelector('#low');
