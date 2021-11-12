@@ -89,7 +89,7 @@ a:hover {
 }
 .col-2 {
 	width: 101px;
-	justify-content: space-around;
+	justify-content: space-between;
 	flex-wrap: nowrap;
 }
 #current-temp-unit-container {
@@ -129,13 +129,16 @@ a:hover {
 	top: 9px;
 	object-fit: none;
 }
-
+#low {
+	opacity: 0.5;
+}
 #low,
 #high {
 	color: white;
 	font-size: 17px;
 	line-height: 57px;
 }
+
 #low-high {
 	position: relative;
 	top: -8px;
@@ -146,28 +149,35 @@ a:hover {
 	font-weight: bold;
 }
 
+#forecast {
+	text-align: center;
+}
+
 .forecast-temp-low {
 	opacity: 0.5;
 }
+
 .forecast-temperature {
 	text-align: center;
+}
+.row {
+	justify-content: space-between;
 }
 
 .row-search-bar {
 	font-family: 'Spartan', sans-serif;
 	justify-content: center;
 }
+
 #units {
 	font-size: 15px;
 	position: relative;
 	top: -30px;
 	right: -8px;
 }
+
 #unit-container {
 	position: relative;
 	top: -39px;
 	left: 133px;
-}
-#forecast {
-	text-align: center;
 }
