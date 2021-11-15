@@ -130,7 +130,7 @@ function displayCurrentTemp(response) {
 //Celsius & Fahrenheit Changes -------------
 function displayCelsiusTemperature(event) {
 	event.preventDefault();
-	let celsiusTemperature = (globalFahrenheitTemperature - 32 * 5) / 9;
+	let celsiusTemperature = ((globalFahrenheitTemperature - 32) * 5) / 9;
 	let currentTempDisplay = document.querySelector('#current-temperature');
 	currentTempDisplay.innerHTML = Math.round(celsiusTemperature);
 }
