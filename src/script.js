@@ -93,14 +93,6 @@ function displayCurrentTemp(response) {
 	let currentTempDisplay = document.querySelector('#current-temperature');
 	currentTempDisplay.innerHTML = `${Math.round(response.data.main.temp)}°`;
 
-	let currentLowTemp = Math.round(response.data.main.temp_min);
-	let displayLow = document.querySelector('#low');
-	displayLow.innerHTML = `${currentLowTemp}°`;
-
-	let currentHighTemp = Math.round(response.data.main.temp_max);
-	let displayHigh = document.querySelector('#high');
-	displayHigh.innerHTML = `${currentHighTemp}°`;
-
 	let condition = document.querySelector('#condition');
 	condition.innerHTML = response.data.weather[0].description;
 
